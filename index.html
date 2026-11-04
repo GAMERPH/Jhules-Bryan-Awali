@@ -1,778 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Beads Ahoy handmade charm booth and custom keepsakes." />
-  <title>Beads Ahoy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jhules Bryan B. Awali — Customer Service, Financial Account Support, Virtual Assistance, Social Media Management and Graphic Design.">
+  <title>Jhules Bryan Awali | Customer Service & Virtual Assistant</title>
   <style>
-    :root {
-      --bg: #241713;
-      --bg-2: #1b120f;
-      --brown: #4f2d1f;
-      --rust: #6d3728;
-      --rust-2: #7b3d2d;
-      --gold: #efbf77;
-      --orange: #e17a45;
-      --cream: #f1e0ca;
-      --muted: #d7c0a0;
-      --line: rgba(255, 255, 255, 0.10);
-      --card-bg: rgba(129, 89, 63, 0.10);
-      --dark-panel: rgba(45, 28, 24, 0.9);
-      --content: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--cream);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .wrap { width: min(var(--content), calc(100% - 42px)); margin-inline: auto; }
-
-    .topbar {
-      min-height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #5a2d1f;
-      border-bottom: 1px solid var(--line);
-      color: #f5e5d0;
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      font-weight: 700;
-      text-align: center;
-      padding: 8px 12px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(36, 23, 19, 0.96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
-    }
-    .nav {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-family: "Playfair Display", serif;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -.03em;
-      white-space: nowrap;
-    }
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #f4ead5, #d8b684);
-      color: #4a2a1d;
-      border: 2px solid rgba(255,255,255,.18);
-      box-shadow: inset 0 0 0 3px rgba(74,42,29,.8);
-      font-size: 22px;
-      font-weight: 700;
-      font-style: italic;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(18px, 2.4vw, 36px);
-      font-size: 13px;
-      font-weight: 700;
-      color: #f9ebd9;
-    }
-    nav a { opacity: .88; }
-    nav a:hover { opacity: 1; }
-
-    .nav-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 22px;
-      border-radius: 999px;
-      background: rgba(239, 191, 119, 0.12);
-      border: 1px solid rgba(255,255,255,.12);
-      color: var(--cream);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      font-size: 11px;
-      font-weight: 700;
-      transition: transform .2s ease, background .2s ease;
-    }
-    .nav-button:hover { transform: translateY(-1px); background: rgba(239,191,119,0.2); }
-
-    .hero {
-      background:
-        radial-gradient(circle at 72% 22%, rgba(183,120,78,.28), transparent 22%),
-        radial-gradient(circle at 48% 87%, rgba(52,26,20,.5), transparent 30%),
-        linear-gradient(180deg, #2a1b18 0%, #251814 100%);
-      overflow: hidden;
-    }
-    .hero-inner {
-      min-height: 560px;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      align-items: center;
-      gap: 46px;
-      padding: 58px 0 54px;
-    }
-    .eyebrow {
-      margin: 0 0 18px;
-      color: var(--orange);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-    .eyebrow .dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-right: 10px;
-      border-radius: 50%;
-      background: var(--gold);
-      vertical-align: middle;
-    }
-    h1,h2,h3 { font-family: "Playfair Display", serif; letter-spacing: -.04em; }
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(52px, 5.6vw, 88px);
-      line-height: .96;
-      font-weight: 700;
-    }
-    h1 .alt { display: block; color: var(--orange); }
-    .hero-copy > p {
-      max-width: 530px;
-      color: #f0d9bb;
-      font-size: 15px;
-      line-height: 1.8;
-      margin: 0;
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 28px 0 16px;
-    }
-    .button-main, .button-soft {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      font-size: 11px;
-      font-weight: 700;
-      border: 1px solid rgba(255,255,255,.12);
-      transition: transform .2s ease, opacity .2s ease;
-    }
-    .button-main {
-      background: linear-gradient(180deg, #d57a49, #b85f39);
-      color: #fffaf3;
-    }
-    .button-soft {
-      background: rgba(255,255,255,.04);
-      color: var(--cream);
-    }
-    .button-main:hover, .button-soft:hover { transform: translateY(-1px); }
-    .microcopy {
-      color: rgba(245,228,205,.82);
-      font-size: 11px;
-      letter-spacing: .02em;
-    }
-
-    .art-stage { position: relative; display: grid; place-items: center; min-height: 320px; }
-    .banner {
-      position: relative;
-      width: min(100%, 560px);
-      min-height: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      padding: 20px 28px;
-      border-radius: 26px;
-      overflow: hidden;
-      background: linear-gradient(120deg, rgba(244,221,183,.88), rgba(216,168,108,.92));
-      border: 1px solid rgba(109,55,40,.22);
-      box-shadow: 0 26px 70px rgba(0,0,0,.22);
-    }
-    .banner::before, .banner::after {
-      content: "";
-      position: absolute;
-      left: -20%;
-      width: 140%;
-      height: 52px;
-      border: 2px solid rgba(86,43,31,.3);
-      border-radius: 50%;
-    }
-    .banner::before { top: -16px; transform: rotate(-8deg); }
-    .banner::after { bottom: -18px; transform: rotate(7deg); }
-    .big-b {
-      position: relative;
-      z-index: 2;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(90px, 11vw, 140px);
-      line-height: .82;
-      color: rgba(74,42,29,.88);
-      text-shadow: 0 3px 18px rgba(74,42,29,.12);
-    }
-    .seal {
-      position: relative;
-      z-index: 2;
-      width: 148px;
-      height: 148px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      border-radius: 50%;
-      background: rgba(255,255,255,.12);
-      border: 3px solid #562b1f;
-      outline: 1px solid #562b1f;
-      outline-offset: 5px;
-      color: #562b1f;
-      transform: rotate(-2deg);
-    }
-    .seal b { display: block; font-size: 52px; line-height: .86; }
-    .seal strong { display: block; font-size: 18px; margin-top: 2px; }
-    .seal small { display: block; font-size: 7px; letter-spacing: .18em; text-transform: uppercase; margin-top: 4px; }
-    .bead-row {
-      position: absolute;
-      z-index: 3;
-      left: 17%;
-      top: 18%;
-      display: flex;
-      transform: rotate(-12deg);
-    }
-    .bead-row span {
-      width: 24px; height: 24px;
-      display: grid; place-items: center;
-      margin-left: -2px;
-      border: 2px solid rgba(255,255,255,.74);
-      border-radius: 8px;
-      font-size: 11px; font-weight: 800; color: white;
-      box-shadow: 0 5px 12px rgba(0,0,0,.12);
-    }
-    .bead-row span:nth-child(1){ background: #3a8a87; }
-    .bead-row span:nth-child(2){ background: #d96451; }
-    .bead-row span:nth-child(3){ background: #8158b9; }
-    .bead-row span:nth-child(4){ background: #efc768; color: #4d2c1a; }
-    .bead-row span:nth-child(5){ background: #d76868; }
-    .joy-chip {
-      position: absolute;
-      left: -14px;
-      bottom: 10px;
-      z-index: 6;
-      width: 104px;
-      height: 104px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      border: 5px solid rgba(255,255,255,.85);
-      background: #7b5ad6;
-      box-shadow: 0 10px 20px rgba(0,0,0,.2);
-      transform: rotate(-10deg);
-      color: white;
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.15;
-      font-weight: 700;
-    }
-    .joy-chip b { display: block; font-family: "Playfair Display", serif; font-size: 21px; }
-
-    .feature-bar {
-      background: #603122;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .feature-inner {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      gap: 18px;
-      padding: 12px 0;
-      flex-wrap: wrap;
-    }
-    .feature-item {
-      color: var(--cream);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-    }
-    .feature-item span {
-      color: var(--gold);
-      margin-right: 8px;
-      font-size: 16px;
-    }
-
-    .section { padding: 90px 0 75px; }
-    .section-header {
-      max-width: 760px;
-      margin: 0 auto 38px;
-      text-align: center;
-    }
-    .section-header h2 {
-      margin: 0 0 12px;
-      font-size: clamp(34px, 4vw, 54px);
-      line-height: 1.04;
-      font-weight: 700;
-    }
-    .section-header p {
-      color: var(--muted);
-      font-size: 14px;
-      margin: 0;
-    }
-    .create-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-    }
-    .create-card {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 24px 20px 18px;
-    }
-    .icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      border-radius: 14px;
-      background: rgba(227,106,53,0.14);
-      color: var(--gold);
-      font-size: 20px;
-    }
-    .create-card h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
-    }
-    .create-card p {
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .story { padding: 34px 0 80px; }
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 58px;
-    }
-    .story-photo {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      border-radius: 22px;
-      background: #5b3a2b;
-    }
-    .story-copy h2 {
-      font-size: clamp(38px, 4vw, 60px);
-      line-height: 1.05;
-      margin: 0 0 18px;
-    }
-    .story-copy p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-      margin: 0 0 18px;
-    }
-    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 24px; }
-    .pill {
-      display: inline-block;
-      padding: 7px 13px;
-      border-radius: 999px;
-      background: rgba(86, 54, 41, 0.7);
-      color: #f9d9ad;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .gallery { background: rgba(43,28,22,0.95); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 1fr 1fr;
-      gap: 14px;
-    }
-    .gallery-grid img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 16px;
-      background: #503528;
-    }
-    .gallery-grid img:first-child { height: 286px; }
-    .gallery-grid img:nth-child(2) { margin-top: 34px; }
-    .gallery-grid img:nth-child(3) { margin-top: 12px; }
-
-    .reviews {
-      background: rgba(43,28,22,0.95);
-      padding: 10px 0 76px;
-    }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 16px;
-    }
-    .review {
-      min-height: 220px;
-      padding: 24px 22px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.11);
-      background: rgba(255,255,255,0.02);
-    }
-    .stars { color: var(--gold); letter-spacing: .08em; font-size: 16px; }
-    .review blockquote {
-      margin: 12px 0 16px;
-      color: #f3e7d5;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-    .reviewer {
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-      color: #f4e3cb;
-    }
-    .review-meta {
-      color: rgba(244, 227, 199, 0.72);
-      font-size: 11px;
-      margin-top: 4px;
-    }
-
-    .cta-section {
-      background: #6a3d2c;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 62px 0 76px;
-    }
-    .cta-box {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .cta-box h2 {
-      margin: 0 0 18px;
-      font-size: clamp(42px, 5vw, 86px);
-      line-height: .95;
-      letter-spacing: -.06em;
-    }
-    .cta-box p {
-      max-width: 690px;
-      margin: 0 auto 26px;
-      color: #f2dcb3;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-    .cta-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 18px;
-    }
-    .cta-actions .button-main, .cta-actions .button-soft {
-      min-height: 52px;
-      padding-inline: 26px;
-      font-size: 12px;
-    }
-    .contact-line {
-      margin-top: 20px;
-      color: rgba(244,227,199,.82);
-      font-size: 12px;
-      letter-spacing: .02em;
-    }
-    .contact-line a { text-decoration: underline; text-underline-offset: 3px; }
-
-    .footer {
-      background: rgba(25, 17, 15, 0.98);
-      border-top: 1px solid var(--line);
-      padding: 26px 0 28px;
-    }
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .footer-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -.03em;
-    }
-    .footer-brand .brand-mark {
-      width: 38px; height: 38px; font-size: 20px;
-    }
-    .copyright { color: rgba(244,227,199,.75); font-size: 12px; }
-    .footer-links {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      color: #f0dfc0;
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 860px) {
-      .menu-toggle { display: block; }
-      nav { display: none; position: absolute; top: 80px; left: 0; right: 0; padding: 14px 24px 18px; background: rgba(36,23,19,.97); border-bottom: 1px solid var(--line); }
-      nav.show { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
-      .nav-button { display: none; }
-      .hero-inner, .story-grid { grid-template-columns: 1fr; }
-      .create-grid, .reviews-grid { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-grid img:first-child { grid-column: span 2; }
-    }
-    @media (max-width: 560px) {
-      .wrap { width: min(var(--content), calc(100% - 32px)); }
-      .topbar { font-size: 9px; letter-spacing: .08em; }
-      .brand { font-size: 21px; }
-      .brand-mark { width: 38px; height: 38px; }
-      .hero-inner { padding-top: 46px; }
-      .banner { min-height: 196px; }
-      .seal { width: 118px; height: 118px; }
-      .seal strong { font-size: 14px; }
-      .seal small { letter-spacing: .12em; }
-      .joy-chip { width: 86px; height: 86px; left: -8px; font-size: 12px; }
-      .joy-chip b { font-size: 18px; }
-      .feature-inner { justify-content: flex-start; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-grid img, .gallery-grid img:first-child { height: 210px; margin: 0; grid-column: auto; }
-      .cta-box h2 { font-size: 42px; }
-      .cta-actions { flex-direction: column; }
-      .footer-inner { justify-content: center; text-align: center; }
-    }
+    :root{
+      --bg:#090e1c;--panel:#111a2d;--panel2:#17233b;--text:#f1f4ff;--muted:#aab6ce;--purple:#9182ff;--mint:#43ddc2;--line:rgba(255,255,255,.1)
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(145,130,255,.17),transparent 34%),radial-gradient(ellipse at 0% 35%,rgba(103,157,255,.12),transparent 28%),var(--bg);color:var(--text);font:16px/1.6 Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92vw);margin:0 auto}.header{position:sticky;top:0;z-index:20;background:rgba(9,14,28,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:1.4rem}.logo b{color:var(--purple)}.menu{display:none;border:1px solid var(--line);background:transparent;color:var(--text);padding:8px 14px;border-radius:10px;font:inherit}.nav-links{display:flex;align-items:center;gap:28px;font-size:.92rem;color:var(--muted)}.nav-links a:hover{color:var(--text)}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:52px;align-items:center;padding:90px 0 70px}.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--mint)}h1{font-size:clamp(2.8rem,5vw,5rem);line-height:1.05;letter-spacing:-.06em;margin:18px 0 18px}.h1-accent{color:var(--purple)}.intro{font-size:1.15rem;color:var(--muted);max-width:680px}.actions{display:flex;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:999px;border:1px solid var(--line);font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.primary{background:linear-gradient(135deg,var(--purple),#6d70ff);box-shadow:0 10px 30px rgba(145,130,255,.25)}.profile-card{padding:18px;background:linear-gradient(180deg,rgba(23,35,59,.94),rgba(17,26,45,.9));border:1px solid var(--line);border-radius:26px;box-shadow:0 24px 60px rgba(0,0,0,.25)}.profile-photo{width:100%;height:350px;object-fit:cover;border-radius:22px;border:3px solid rgba(255,255,255,.08)}.status{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:.96rem}.status strong{color:var(--text)}section{padding:80px 0}.section-top{margin-bottom:28px}.section-top small{color:var(--purple);text-transform:uppercase;letter-spacing:.15em;font-weight:800;font-size:.72rem}.section-top h2{margin:10px 0 12px;font-size:clamp(2.1rem,3vw,3.3rem);line-height:1.2;letter-spacing:-.05em}.section-top p{color:var(--muted);max-width:760px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:var(--panel);border:1px solid var(--line);padding:24px 22px;border-radius:18px}.ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(145,130,255,.18),rgba(67,221,194,.14));font-size:1.7rem;margin-bottom:14px}.card h3{margin:0 0 10px;font-size:1.4rem}.card p{margin:0;color:var(--muted)}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.chip{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.02);font-size:.85rem;color:var(--muted)}.timeline{display:grid;gap:18px}.job{display:grid;grid-template-columns:210px 1fr;gap:26px;padding:20px 24px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.date{font-size:.82rem;font-weight:700;color:var(--mint);letter-spacing:.06em}.job h3{margin:0 0 4px;font-size:1.4rem}.company{font-weight:700;color:var(--purple);margin-bottom:8px}.job p{margin:0;color:var(--muted)}.education{display:grid;grid-template-columns:1fr 1fr;gap:18px}.edu{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:18px}.edu strong{display:block;margin-bottom:8px}.edu p{margin:0;color:var(--muted)}.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.sample{display:flex;flex-direction:column;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;height:100%}.sample img{width:100%;height:200px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.06)}.tag{display:inline-flex;margin:14px 0 10px;padding:7px 10px;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;background:rgba(145,130,255,.12);color:var(--purple)}.sample h3{margin:0 0 12px;font-size:1.25rem}.download-links{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-size:.82rem}.download-links a{display:inline-flex;align-items:center;justify-content:center;padding:8px 10px;border-radius:10px;border:1px solid var(--line);color:var(--muted)}.contactbox{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 30px;background:linear-gradient(180deg,rgba(17,26,45,.9),rgba(23,35,59,.9));border:1px solid var(--line);border-radius:24px}.contactbox h2{margin:0 0 8px;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em}.contactbox p{margin:0;color:var(--muted)}.contactitems{display:flex;flex-wrap:wrap;gap:12px}.contactitems a{padding:12px 18px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);color:var(--muted)}footer{padding:30px 0 40px;text-align:center;color:var(--muted);border-top:1px solid var(--line);margin-top:30px}#year{color:var(--text)}
+    @media (max-width: 860px){
+      .nav{position:relative}.menu{display:block}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;padding:18px 4vw 20px;background:rgba(9,14,28,.96);border-bottom:1px solid var(--line)}.nav-links.show{display:flex}.hero{grid-template-columns:1fr}.job{grid-template-columns:1fr}.portfolio-grid,.grid,.education{grid-template-columns:1fr}.contactbox{flex-direction:column;align-items:flex-start}}
+    @media (max-width: 540px){
+      .nav{height:64px}.hero{padding-top:60px}.profile-photo{height:260px}.download-links{flex-direction:column}.btn{width:100%}.actions{flex-direction:column}.contactitems{width:100%}.contactitems a{width:100%;text-align:center}}
   </style>
 </head>
 <body>
-  <div class="topbar">Handmade with heart · Little details, big memories</div>
-
-  <header>
+  <header class="header">
     <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="Beads Ahoy home">
-        <span class="brand-mark">B</span>
-        <span>BEADS AHOY</span>
-      </a>
-      <button class="menu-toggle" aria-label="Toggle navigation" style="display:none;">Menu</button>
-      <nav aria-label="Main navigation">
-        <a href="#what-we-do">What we do</a>
-        <a href="#our-story">Our story</a>
-        <a href="#our-work">Our work</a>
-        <a href="#reviews">Reviews</a>
+      <a class="logo" href="#home">JB<b>.</b> PORTFOLIO</a>
+      <button class="menu" aria-label="Toggle navigation">Menu</button>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="nav-button" href="#contact">Let's create ↗</a>
     </div>
   </header>
 
   <main id="home">
-    <section class="hero">
-      <div class="wrap hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="dot"></span>Your happy little charm corner</p>
-          <h1>Make it yours.<span class="alt">Make it joyful.</span></h1>
-          <p>From colorful custom charms to keepsakes made just for you, Beads Ahoy turns tiny treasures into big smiles. Pick your colors, choose your charms, and create something that feels like you.</p>
-          <div class="actions">
-            <a class="button-main" href="#what-we-do">Explore the fun →</a>
-            <a class="button-soft" href="#contact">Chat with us</a>
-          </div>
-          <div class="microcopy">♡ Personalized pieces · On-site charm booth · Event-ready fun</div>
-        </div>
-
-        <div class="art-stage" aria-label="Beads Ahoy and The Bean illustration">
-          <div class="banner">
-            <span class="big-b">B</span>
-            <div class="seal">
-              <div>
-                <b>b</b>
-                <strong>The Bean</strong>
-                <small>by Beads Ahoy</small>
-              </div>
-            </div>
-            <div class="bead-row" aria-hidden="true">
-              <span>B</span><span>E</span><span>A</span><span>D</span><span>S</span>
-            </div>
-          </div>
-          <div class="joy-chip">made with<br><b>♡ JOY</b></div>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">Customer Service · Account Support · Creative Digital Services</div>
+        <h1>Hi, I'm <span class="h1-accent">Jhules Bryan Awali.</span></h1>
+        <p class="intro">I help customers feel supported and businesses stay organized. I bring hands-on financial account customer service experience together with social media, graphic design, sales support, and virtual assistance skills.</p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Let's connect</a>
         </div>
       </div>
+
+      <aside class="profile">
+        <div class="profile-card">
+          <img class="profile-photo" src="DP.png" alt="Jhules Bryan Awali">
+          <div class="status"><strong>Professional:</strong> Customer Support · Virtual Assistant · Creative Support</div>
+        </div>
+      </aside>
     </section>
 
-    <div class="feature-bar">
-      <div class="wrap feature-inner">
-        <div class="feature-item"><span>✦</span>Made with heart</div>
-        <div class="feature-item"><span>♡</span>Personalized for you</div>
-        <div class="feature-item"><span>✦</span>Perfect for celebrations</div>
-      </div>
-    </div>
-
-    <section class="section" id="what-we-do">
+    <section id="about">
       <div class="wrap">
-        <div class="section-header">
-          <p class="eyebrow"><span class="dot"></span>A little something for everyone</p>
-          <h2>What can we create together?</h2>
-          <p>Pick a favorite, mix in your personality, and leave with a little piece of happy.</p>
+        <div class="section-top">
+          <small>About me</small>
+          <h2>Professional service. Creative thinking. Dependable support.</h2>
+          <p>My background includes financial account customer service, sales, and digital content support. I value clear communication, careful handling of customer information, adaptability, and getting the details right.</p>
         </div>
-
-        <div class="create-grid">
-          <article class="create-card">
-            <div class="icon">✿</div>
-            <h3>Custom charms</h3>
-            <p>Colorful letter beads and playful charms made into a one-of-a-kind accessory.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="ico">🎧</div>
+            <h3>Customer-first approach</h3>
+            <p>Support customers with patience, active listening, clear explanations, and a focus on solving concerns.</p>
           </article>
-          <article class="create-card">
-            <div class="icon">♡</div>
-            <h3>Personal keepsakes</h3>
-            <p>Thoughtful little treasures for your favorite people and everyday moments.</p>
+          <article class="card">
+            <div class="ico">💼</div>
+            <h3>Flexible support</h3>
+            <p>Comfortable switching between customer-facing work, admin tasks, research, and team coordination.</p>
           </article>
-          <article class="create-card">
-            <div class="icon">✦</div>
-            <h3>Pop-up charm booth</h3>
-            <p>A hands-on, joy-filled activity that brings a creative touch to your celebration.</p>
+          <article class="card">
+            <div class="ico">🎨</div>
+            <h3>Creative execution</h3>
+            <p>Support a brand’s online presence with social media content, graphic design, and visual consistency.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="story" id="our-story">
-      <div class="wrap story-grid">
-        <img class="story-photo" src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1100&q=85" alt="A hand-crafted colorful booth" loading="lazy">
-        <div class="story-copy">
-          <p class="eyebrow"><span class="dot"></span>A small business with a big heart</p>
-          <h2>Little beads.<br>Lasting memories.</h2>
-          <p>Beads Ahoy is all about making ordinary moments a little more special. We love seeing you mix, match, and make something personal—whether it's a name charm, a colorful bracelet, or a keepsake for someone you love.</p>
-          <p>Our pop-up charm booth brings the fun right to your celebration, with a colorful selection and a hands-on experience guests can take home.</p>
-          <div class="pills">
-            <span class="pill">♡ Creativity</span>
-            <span class="pill">✿ Personal touches</span>
-            <span class="pill">✦ Happy memories</span>
-          </div>
-          <a class="button-main" href="#contact">Plan a charm day ↗</a>
         </div>
       </div>
     </section>
 
-    <section class="section gallery" id="our-work">
+    <section id="services">
       <div class="wrap">
-        <div class="section-header">
-          <p class="eyebrow"><span class="dot"></span>Made for the moments</p>
-          <h2>A peek at the happy things</h2>
-          <p>Colorful charm stations, personalized details, and little creations made with love.</p>
+        <div class="section-top">
+          <small>How I can help</small>
+          <h2>Services</h2>
+          <p>Practical support for customer experience and everyday business operations.</p>
         </div>
-
-        <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=85" alt="Warm handmade shop display" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85" alt="Creative art materials" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1455390582262-044c?auto=format&fit=crop&w=800&q=85" alt="Creative work table" loading="lazy">
+        <div class="grid">
+          <article class="card">
+            <div class="ico">🎧</div>
+            <h3>Customer Service</h3>
+            <p>Customer inquiries, account support, billing questions, transaction assistance, verification, issue resolution, and professional communication.</p>
+          </article>
+          <article class="card">
+            <div class="ico">💳</div>
+            <h3>Financial Account Support</h3>
+            <p>Credit and debit account inquiries, account maintenance, billing and balance concerns, and fraud-related case support.</p>
+          </article>
+          <article class="card">
+            <div class="ico">🗂️</div>
+            <h3>Virtual & Admin Assistance</h3>
+            <p>Data entry, email assistance, online research, document preparation, information organization, and task support.</p>
+          </article>
+          <article class="card">
+            <div class="ico">📱</div>
+            <h3>Social Media Management</h3>
+            <p>Content calendars, captions, hashtags, page support, promotional posts, and consistent brand messaging.</p>
+          </article>
+          <article class="card">
+            <div class="ico">🎨</div>
+            <h3>Graphic Design</h3>
+            <p>Canva social posts, flyers, banners, promotional graphics, and basic photo editing such as resizing and background removal.</p>
+          </article>
+          <article class="card">
+            <div class="ico">💻</div>
+            <h3>Web Developer</h3>
+            <p>Responsive websites, portfolio pages, landing pages, and front-end development using HTML, CSS, and JavaScript.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="reviews" id="reviews">
-      <div class="wrap reviews-grid">
-        <article class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>“They are diligent and always ready to help. They give clear instructions and answer every question and need quickly.”</blockquote>
-          <div class="reviewer">Jus Domingo</div>
-          <div class="review-meta">Facebook recommendation · June 26</div>
-        </article>
-        <article class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Superb! I highly recommend the DIY and unique event souvenirs. The team was accommodating and had a very beautiful attendant at the booth.”</blockquote>
-          <div class="reviewer">Rhealyn Anasarias Plotea</div>
-          <div class="review-meta">Facebook recommendation · June 10</div>
-        </article>
-        <article class="review">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Legit and high quality customized keychains. They finished my order within a day. Thank you!”</blockquote>
-          <div class="reviewer">Abbie B Gregory</div>
-          <div class="review-meta">Facebook recommendation · May 18</div>
-        </article>
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-top">
+          <small>My capabilities</small>
+          <h2>Skills & tools</h2>
+          <p>Core strengths and platforms I have experience using.</p>
+        </div>
+        <div class="card">
+          <h3>Professional skills</h3>
+          <div class="chips">
+            <span class="chip">Customer communication</span>
+            <span class="chip">Active listening</span>
+            <span class="chip">Account management</span>
+            <span class="chip">Billing & transaction support</span>
+            <span class="chip">Issue resolution</span>
+            <span class="chip">Sales support</span>
+            <span class="chip">Lead generation</span>
+            <span class="chip">Social media content</span>
+            <span class="chip">Graphic design</span>
+            <span class="chip">Administrative support</span>
+            <span class="chip">Online research</span>
+            <span class="chip">Team coordination</span>
+            <span class="chip">Web Developer</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+          </div>
+          <h3 style="margin:28px 0 12px;">Tools & platforms</h3>
+          <div class="chips">
+            <span class="chip">Salesforce</span>
+            <span class="chip">Calabrio</span>
+            <span class="chip">Microsoft Office</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">Canva</span>
+            <span class="chip">CapCut</span>
+            <span class="chip">Filmora</span>
+            <span class="chip">AI-assisted tools</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="cta-section" id="contact">
-      <div class="wrap cta-box">
-        <p class="eyebrow"><span class="dot"></span>Let's make something cute</p>
-        <h2>Ready to add a little charm?</h2>
-        <p>Have an event coming up, a gift idea, or a custom design in mind? We’d love to hear about it. Send us a message and let’s make your idea come to life.</p>
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-top">
+          <small>Career journey</small>
+          <h2>Work experience</h2>
+          <p>Customer support, financial account services, sales, and creative digital work.</p>
+        </div>
+        <div class="timeline">
+          <article class="job">
+            <div class="date">January 2026 – May 2026</div>
+            <div>
+              <h3>Credit Card Account Representative</h3>
+              <div class="company">NTT DATA</div>
+              <p>Handled credit card transactions, billing inquiries, online account support, and customer account-related concerns.</p>
+            </div>
+          </article>
+          <article class="job">
+            <div class="date">April 2022 – June 2024</div>
+            <div>
+              <h3>Financial Account Representative</h3>
+              <div class="company">Teleperformance</div>
+              <p>Handled personal financial accounts, billing concerns, account verification, and fraud-related cases while providing customer support.</p>
+            </div>
+          </article>
+          <article class="job">
+            <div class="date">8 months · Dates not specified</div>
+            <div>
+              <h3>Sales Supervisor</h3>
+              <div class="company">New San Jose Builders</div>
+              <p>Supervised sales agents, monitored team performance, and assisted with training and sales reporting.</p>
+            </div>
+          </article>
+          <article class="job">
+            <div class="date">January 2019 – March 2021</div>
+            <div>
+              <h3>Sales Agent</h3>
+              <div class="company">New San Jose Builders</div>
+              <p>Assisted clients with property sales and inquiries and worked toward monthly sales targets.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <div class="cta-actions">
-          <a class="button-main" href="mailto:JBAWALI30@GMAIL.COM?subject=Message%20Beads%20Ahoy">Message Beads Ahoy ↗</a>
+    <section id="education">
+      <div class="wrap">
+        <div class="section-top">
+          <small>Education</small>
+          <h2>Educational background</h2>
+        </div>
+        <div class="education">
+          <div class="edu">
+            <strong>ICCT Colleges – Cainta</strong>
+            <p>Bachelor of Science in Information Technology studies</p>
+          </div>
+          <div class="edu">
+            <strong>Professional development</strong>
+            <p>Go Hire Virtual Boot Camp: General VA, sales support, lead generation, administrative tasks, and social media fundamentals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-top">
+          <small>Work samples</small>
+          <h2>Sample work</h2>
+          <p>Upload screenshots into the <strong>samples</strong> folder and they will display directly on the portfolio website.</p>
         </div>
 
-        <div class="contact-line">Call or message: <a href="tel:+639760005974">0976 000 5974</a> · Pasig City, Philippines</div>
-        <div class="contact-line">Email: <a href="mailto:JBAWALI30@GMAIL.COM">JBAWALI30@GMAIL.COM</a></div>
+        <div class="portfolio-grid">
+          <article class="sample">
+            <div>
+              <img src="samples/sample-1.png" alt="Social media design sample">
+              <span class="tag">Social Media</span>
+              <h3>Social Media Design Pack</h3>
+            </div>
+            <div class="download-links">
+              <a href="samples/sample-1.png" download>Download</a>
+              <a href="mailto:JBAWALI30@GMAIL.COM?subject=Request%20social%20media%20design%20file">Gmail</a>
+            </div>
+          </article>
 
-        <div class="cta-actions">
-          <a class="button-soft" href="https://www.facebook.com/awalijb" target="_blank" rel="noopener noreferrer">Follow our main Facebook ↗</a>
-          <a class="button-soft" href="#our-work">See new products ↗</a>
+          <article class="sample">
+            <div>
+              <img src="samples/sample-2.png" alt="Portfolio sample layout">
+              <span class="tag">Portfolio</span>
+              <h3>Portfolio Layout Sample</h3>
+            </div>
+            <div class="download-links">
+              <a href="samples/sample-2.png" download>Download</a>
+              <a href="mailto:JBAWALI30@GMAIL.COM?subject=Request%20portfolio%20layout%20sample">Gmail</a>
+            </div>
+          </article>
+
+          <article class="sample">
+            <div>
+              <img src="samples/sample-3.png" alt="Customer support sample">
+              <span class="tag">Support</span>
+              <h3>Customer Support Demo</h3>
+            </div>
+            <div class="download-links">
+              <a href="samples/sample-3.png" download>Download</a>
+              <a href="mailto:JBAWALI30@GMAIL.COM?subject=Request%20customer%20support%20demo">Gmail</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contactbox">
+          <div>
+            <div class="eyebrow" style="margin:0 0 8px;color:var(--purple);">Contact</div>
+            <h2>Let's work together.</h2>
+            <p>Have a role, project, or business support need in mind? Feel free to reach out.</p>
+          </div>
+          <div class="contactitems">
+            <a href="mailto:JBAWALI30@GMAIL.COM">Email me</a>
+            <a href="tel:+639694379046">Call me</a>
+            <a href="https://www.facebook.com/awalijb" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark">B</span>
-        <span>Beads Ahoy</span>
-      </div>
-      <div class="copyright">© <span id="year"></span> Beads Ahoy. Handmade with heart. ♡</div>
-      <div class="footer-links">
-        <a href="#home">Back to top</a>
-        <a href="https://wa.me/639760005974" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://www.facebook.com/awalijb" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="#our-work">New products</a>
-      </div>
-    </div>
-  </footer>
+  <footer>© <span id="year"></span> Jhules Bryan B. Awali · Professional Portfolio</footer>
 
   <script>
-    const nav = document.querySelector('nav');
-    const btn = document.querySelector('.menu-toggle');
-    if (btn && nav) {
-      btn.style.display = 'block';
-      btn.addEventListener('click', () => {
-        const open = nav.classList.toggle('show');
-        btn.setAttribute('aria-expanded', String(open));
-      });
-      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('show')));
-    }
     document.getElementById('year').textContent = new Date().getFullYear();
+    const menu = document.querySelector('.menu');
+    const navLinks = document.querySelector('.nav-links');
+    menu.addEventListener('click', () => navLinks.classList.toggle('show'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('show')));
   </script>
 </body>
 </html>
