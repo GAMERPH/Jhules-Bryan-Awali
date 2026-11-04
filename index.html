@@ -1,82 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Beads Ahoy creates custom charms, keepsakes, and joyful pop-up experiences.">
-  <meta name="theme-color" content="#241713">
-  <title>Beads Ahoy — Make it yours. Make it joyful.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Beads Ahoy handmade charm booth and custom keepsakes." />
+  <title>Beads Ahoy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#241713;--deep:#1d110f;--rust:#713823;--rust2:#623522;--panel:#38241d;--cream:#f7e1c2;--gold:#f3b75f;--orange:#e36a35;--muted:#e4c9a8;--line:rgba(247,225,194,.15);--content:1160px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;line-height:1.7}a{color:inherit;text-decoration:none}.wrap{width:min(var(--content),calc(100% - 44px));margin:auto}
-    .topbar{padding:6px 12px;background:#603122;text-align:center;color:#fff3df;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}header{position:sticky;top:0;z-index:5;background:rgba(36,23,19,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font:800 25px 'Playfair Display',serif;white-space:nowrap}.mark{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:var(--rust);box-shadow:inset 0 0 0 3px var(--rust);font-size:25px;font-style:italic}nav{display:flex;gap:clamp(16px,3vw,34px);font-size:13px;font-weight:700}nav a:hover,.footer-links a:hover{color:var(--gold)}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;background:var(--rust);color:#fff8ec;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:.2s}.button:hover{transform:translateY(-2px);background:#87472e}.button.gold{background:var(--gold);color:#321d14}.menu{display:none;background:none;border:1px solid var(--line);border-radius:20px;padding:8px 13px;color:var(--cream);font:inherit}
-    .hero{background:radial-gradient(ellipse at 82% 28%,rgba(183,118,63,.28),transparent 35%),radial-gradient(ellipse at 10% 85%,rgba(107,54,60,.2),transparent 36%),var(--bg);overflow:hidden}.hero-inner{min-height:530px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px;padding:65px 0}.eyebrow{margin:0 0 15px;color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.dot{display:inline-block;width:8px;height:8px;margin-right:8px;border-radius:50%;background:var(--gold)}h1,h2,h3{font-family:'Playfair Display',Georgia,serif;letter-spacing:-.04em}h1{margin:0 0 20px;font-size:clamp(50px,6.1vw,76px);line-height:.98}h1 span{display:block;color:var(--orange)}.hero-copy>p:not(.eyebrow){max-width:530px;color:#f0d9bb;font-size:15px;line-height:1.9}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}.micro{color:var(--muted);font-size:11px}.art{position:relative;min-height:300px;display:grid;place-items:center}.banner{position:relative;width:100%;min-height:240px;display:flex;align-items:center;justify-content:space-evenly;overflow:hidden;border-radius:27px;background:linear-gradient(120deg,#fff1d7,#d6ad7d);color:#562b1f;box-shadow:0 25px 70px #0004}.banner:before,.banner:after{position:absolute;content:'';width:140%;height:60px;left:-20%;border:1px solid #69362366;border-radius:50%;transform:rotate(-8deg)}.banner:before{top:-22px}.banner:after{bottom:-28px;transform:rotate(7deg)}.big-b{font:700 clamp(90px,11vw,140px)/1 'Playfair Display',serif}.seal{width:136px;height:136px;border:3px solid #562b1f;outline:1px solid #562b1f;outline-offset:5px;border-radius:50%;display:grid;place-content:center;text-align:center;font-family:'Playfair Display',serif}.seal b{font-size:52px;line-height:.9}.seal strong{font-size:19px}.seal small{font:8px 'DM Sans',sans-serif;letter-spacing:.14em}.beads{position:absolute;z-index:2;left:17%;top:20%;display:flex;transform:rotate(-12deg)}.beads i{width:25px;height:25px;margin-left:-2px;display:grid;place-items:center;border:2px solid #fff4da;border-radius:8px;background:#3e8b88;color:white;font-size:12px;font-style:normal;font-weight:800}.beads i:nth-child(even){background:#e36935}.beads i:nth-child(3n){background:#8052ba}.joy{position:absolute;z-index:3;left:-13px;bottom:2px;width:98px;height:98px;display:grid;place-content:center;border:5px solid #fff2d6;border-radius:50%;background:#8650cf;color:white;text-align:center;font:15px/1.1 'Playfair Display',serif;transform:rotate(-9deg)}.joy b{font-size:20px}
-    .perks{background:#603122}.perks-inner{min-height:68px;display:flex;align-items:center;justify-content:space-around;gap:18px;padding:12px}.perk{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.perk span{margin-right:8px;color:var(--gold);font-size:17px}.section{padding:78px 0}.heading{max-width:690px;margin:0 auto 38px;text-align:center}.heading h2,.story h2,.contact h2{margin:0 0 13px;font-size:clamp(35px,4vw,50px);line-height:1.08}.heading>p:last-child{color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.create-card{padding:25px;border:1px solid var(--line);border-radius:18px;background:#2c1d17}.icon{width:43px;height:43px;display:grid;place-items:center;margin-bottom:16px;border-radius:14px;background:#e36a3526;color:var(--gold);font-size:21px}.create-card h3{margin:0 0 8px;font-size:20px}.create-card p{margin:0;color:var(--muted);font-size:13px}
-    .story{padding:25px 0 80px}.story-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}.story-photo{width:100%;height:360px;object-fit:cover;border-radius:22px;background:#5b3a2b}.story p:not(.eyebrow){color:var(--muted);font-size:14px;line-height:1.9}.pills{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.pill{padding:7px 13px;border-radius:999px;background:#513326;color:#f8d7ad;font-size:11px;font-weight:700}
-    .gallery{background:#2b1c16}.gallery-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:14px}.gallery-grid img{width:100%;height:250px;object-fit:cover;border-radius:15px;background:#503528}.gallery-grid img:first-child{height:285px}.gallery-grid img:nth-child(2){margin-top:34px}.gallery-grid img:nth-child(3){margin-top:12px}
-    .reviews{background:#2b1c16;padding:5px 0 76px}.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.review{min-height:220px;padding:24px;border:1px solid #684835;border-radius:20px;background:#39261e}.stars{color:#e7a52f;letter-spacing:.1em;font-size:16px}.review blockquote{margin:12px 0 16px;color:#f2dfc5;font-size:13px;line-height:1.8}.reviewer{font-weight:700;font-size:13px}.review-meta{color:#cfb397;font-size:10px}
-    .contact{padding:58px 0 66px;background:#623522;text-align:center}.contact .eyebrow{color:var(--gold)}.contact h2{font-size:clamp(38px,4.2vw,54px)}.contact-copy{max-width:610px;margin:0 auto 22px;color:#f0d9bb;font-size:14px}.contact-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:24px auto}.contact-details{margin:18px auto 0;color:#f0d9bb;font-size:13px}.contact-details a{text-decoration:underline;text-underline-offset:3px}.email-line{margin-top:8px}.social-buttons{margin-top:20px}.footer{padding:24px 0;background:var(--deep);border-top:1px solid var(--line)}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-brand{display:flex;align-items:center;gap:10px;font:700 21px 'Playfair Display',serif}.footer-brand .mark{width:40px;height:40px;font-size:20px}.copyright{color:#cfb99f;font-size:11px}.footer-links{display:flex;flex-wrap:wrap;gap:17px;font-size:11px}
-    @media(max-width:800px){.menu{display:block}.nav>.button{display:none}nav{display:none;position:absolute;top:79px;left:0;right:0;padding:12px 22px 18px;background:var(--bg);border-bottom:1px solid var(--line)}nav.show{display:flex;flex-direction:column;gap:0}nav a{padding:10px 0}.hero-inner{grid-template-columns:1fr;gap:20px;padding:54px 0}.story-grid{grid-template-columns:1fr;gap:30px}.grid{grid-template-columns:repeat(2,1fr)}.reviews-grid{grid-template-columns:1fr}.review{min-height:0}.footer-inner{justify-content:center;text-align:center}}
-    @media(max-width:540px){.wrap{width:calc(100% - 34px)}.topbar{font-size:9px;letter-spacing:.08em}.brand{font-size:20px}.mark{width:43px;height:43px}.hero-inner{padding:45px 0}.hero-copy>p:not(.eyebrow){font-size:14px}.banner{min-height:190px;border-radius:20px}.seal{width:108px;height:108px}.seal b{font-size:42px}.seal strong{font-size:15px}.beads{left:12%}.joy{width:82px;height:82px;font-size:13px}.joy b{font-size:17px}.perks-inner{align-items:flex-start;flex-direction:column;gap:7px}.section{padding:62px 0}.grid{grid-template-columns:1fr}.story{padding:0 0 62px}.story-photo{height:255px}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img,.gallery-grid img:first-child{height:180px;margin:0}.gallery-grid img:first-child{grid-column:span 2;height:220px}.contact{padding:53px 0}.footer-links{justify-content:center}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+    :root {
+      --bg: #241713;
+      --bg-2: #1b120f;
+      --brown: #4f2d1f;
+      --rust: #6d3728;
+      --rust-2: #7b3d2d;
+      --gold: #efbf77;
+      --orange: #e17a45;
+      --cream: #f1e0ca;
+      --muted: #d7c0a0;
+      --line: rgba(255, 255, 255, 0.10);
+      --card-bg: rgba(129, 89, 63, 0.10);
+      --dark-panel: rgba(45, 28, 24, 0.9);
+      --content: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(var(--content), calc(100% - 42px)); margin-inline: auto; }
+
+    .topbar {
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #5a2d1f;
+      border-bottom: 1px solid var(--line);
+      color: #f5e5d0;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      padding: 8px 12px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(36, 23, 19, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f4ead5, #d8b684);
+      color: #4a2a1d;
+      border: 2px solid rgba(255,255,255,.18);
+      box-shadow: inset 0 0 0 3px rgba(74,42,29,.8);
+      font-size: 22px;
+      font-weight: 700;
+      font-style: italic;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 2.4vw, 36px);
+      font-size: 13px;
+      font-weight: 700;
+      color: #f9ebd9;
+    }
+    nav a { opacity: .88; }
+    nav a:hover { opacity: 1; }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: rgba(239, 191, 119, 0.12);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--cream);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: 11px;
+      font-weight: 700;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .nav-button:hover { transform: translateY(-1px); background: rgba(239,191,119,0.2); }
+
+    .hero {
+      background:
+        radial-gradient(circle at 72% 22%, rgba(183,120,78,.28), transparent 22%),
+        radial-gradient(circle at 48% 87%, rgba(52,26,20,.5), transparent 30%),
+        linear-gradient(180deg, #2a1b18 0%, #251814 100%);
+      overflow: hidden;
+    }
+    .hero-inner {
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 46px;
+      padding: 58px 0 54px;
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .eyebrow .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      vertical-align: middle;
+    }
+    h1,h2,h3 { font-family: "Playfair Display", serif; letter-spacing: -.04em; }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(52px, 5.6vw, 88px);
+      line-height: .96;
+      font-weight: 700;
+    }
+    h1 .alt { display: block; color: var(--orange); }
+    .hero-copy > p {
+      max-width: 530px;
+      color: #f0d9bb;
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0 16px;
+    }
+    .button-main, .button-soft {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .button-main {
+      background: linear-gradient(180deg, #d57a49, #b85f39);
+      color: #fffaf3;
+    }
+    .button-soft {
+      background: rgba(255,255,255,.04);
+      color: var(--cream);
+    }
+    .button-main:hover, .button-soft:hover { transform: translateY(-1px); }
+    .microcopy {
+      color: rgba(245,228,205,.82);
+      font-size: 11px;
+      letter-spacing: .02em;
+    }
+
+    .art-stage { position: relative; display: grid; place-items: center; min-height: 320px; }
+    .banner {
+      position: relative;
+      width: min(100%, 560px);
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 20px 28px;
+      border-radius: 26px;
+      overflow: hidden;
+      background: linear-gradient(120deg, rgba(244,221,183,.88), rgba(216,168,108,.92));
+      border: 1px solid rgba(109,55,40,.22);
+      box-shadow: 0 26px 70px rgba(0,0,0,.22);
+    }
+    .banner::before, .banner::after {
+      content: "";
+      position: absolute;
+      left: -20%;
+      width: 140%;
+      height: 52px;
+      border: 2px solid rgba(86,43,31,.3);
+      border-radius: 50%;
+    }
+    .banner::before { top: -16px; transform: rotate(-8deg); }
+    .banner::after { bottom: -18px; transform: rotate(7deg); }
+    .big-b {
+      position: relative;
+      z-index: 2;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(90px, 11vw, 140px);
+      line-height: .82;
+      color: rgba(74,42,29,.88);
+      text-shadow: 0 3px 18px rgba(74,42,29,.12);
+    }
+    .seal {
+      position: relative;
+      z-index: 2;
+      width: 148px;
+      height: 148px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      border: 3px solid #562b1f;
+      outline: 1px solid #562b1f;
+      outline-offset: 5px;
+      color: #562b1f;
+      transform: rotate(-2deg);
+    }
+    .seal b { display: block; font-size: 52px; line-height: .86; }
+    .seal strong { display: block; font-size: 18px; margin-top: 2px; }
+    .seal small { display: block; font-size: 7px; letter-spacing: .18em; text-transform: uppercase; margin-top: 4px; }
+    .bead-row {
+      position: absolute;
+      z-index: 3;
+      left: 17%;
+      top: 18%;
+      display: flex;
+      transform: rotate(-12deg);
+    }
+    .bead-row span {
+      width: 24px; height: 24px;
+      display: grid; place-items: center;
+      margin-left: -2px;
+      border: 2px solid rgba(255,255,255,.74);
+      border-radius: 8px;
+      font-size: 11px; font-weight: 800; color: white;
+      box-shadow: 0 5px 12px rgba(0,0,0,.12);
+    }
+    .bead-row span:nth-child(1){ background: #3a8a87; }
+    .bead-row span:nth-child(2){ background: #d96451; }
+    .bead-row span:nth-child(3){ background: #8158b9; }
+    .bead-row span:nth-child(4){ background: #efc768; color: #4d2c1a; }
+    .bead-row span:nth-child(5){ background: #d76868; }
+    .joy-chip {
+      position: absolute;
+      left: -14px;
+      bottom: 10px;
+      z-index: 6;
+      width: 104px;
+      height: 104px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,.85);
+      background: #7b5ad6;
+      box-shadow: 0 10px 20px rgba(0,0,0,.2);
+      transform: rotate(-10deg);
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+    .joy-chip b { display: block; font-family: "Playfair Display", serif; font-size: 21px; }
+
+    .feature-bar {
+      background: #603122;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .feature-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 18px;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+    .feature-item {
+      color: var(--cream);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+    .feature-item span {
+      color: var(--gold);
+      margin-right: 8px;
+      font-size: 16px;
+    }
+
+    .section { padding: 90px 0 75px; }
+    .section-header {
+      max-width: 760px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+    .section-header h2 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.04;
+      font-weight: 700;
+    }
+    .section-header p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+    .create-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+    .create-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px 20px 18px;
+    }
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      background: rgba(227,106,53,0.14);
+      color: var(--gold);
+      font-size: 20px;
+    }
+    .create-card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    .create-card p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .story { padding: 34px 0 80px; }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 58px;
+    }
+    .story-photo {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 22px;
+      background: #5b3a2b;
+    }
+    .story-copy h2 {
+      font-size: clamp(38px, 4vw, 60px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+    .story-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+      margin: 0 0 18px;
+    }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 24px; }
+    .pill {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: rgba(86, 54, 41, 0.7);
+      color: #f9d9ad;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .gallery { background: rgba(43,28,22,0.95); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 14px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: #503528;
+    }
+    .gallery-grid img:first-child { height: 286px; }
+    .gallery-grid img:nth-child(2) { margin-top: 34px; }
+    .gallery-grid img:nth-child(3) { margin-top: 12px; }
+
+    .reviews {
+      background: rgba(43,28,22,0.95);
+      padding: 10px 0 76px;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+    .review {
+      min-height: 220px;
+      padding: 24px 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(255,255,255,0.02);
+    }
+    .stars { color: var(--gold); letter-spacing: .08em; font-size: 16px; }
+    .review blockquote {
+      margin: 12px 0 16px;
+      color: #f3e7d5;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .reviewer {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      color: #f4e3cb;
+    }
+    .review-meta {
+      color: rgba(244, 227, 199, 0.72);
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .cta-section {
+      background: #6a3d2c;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 62px 0 76px;
+    }
+    .cta-box {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-box h2 {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 5vw, 86px);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+    .cta-box p {
+      max-width: 690px;
+      margin: 0 auto 26px;
+      color: #f2dcb3;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .cta-actions .button-main, .cta-actions .button-soft {
+      min-height: 52px;
+      padding-inline: 26px;
+      font-size: 12px;
+    }
+    .contact-line {
+      margin-top: 20px;
+      color: rgba(244,227,199,.82);
+      font-size: 12px;
+      letter-spacing: .02em;
+    }
+    .contact-line a { text-decoration: underline; text-underline-offset: 3px; }
+
+    .footer {
+      background: rgba(25, 17, 15, 0.98);
+      border-top: 1px solid var(--line);
+      padding: 26px 0 28px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+    .footer-brand .brand-mark {
+      width: 38px; height: 38px; font-size: 20px;
+    }
+    .copyright { color: rgba(244,227,199,.75); font-size: 12px; }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #f0dfc0;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 860px) {
+      .menu-toggle { display: block; }
+      nav { display: none; position: absolute; top: 80px; left: 0; right: 0; padding: 14px 24px 18px; background: rgba(36,23,19,.97); border-bottom: 1px solid var(--line); }
+      nav.show { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+      .nav-button { display: none; }
+      .hero-inner, .story-grid { grid-template-columns: 1fr; }
+      .create-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid img:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(var(--content), calc(100% - 32px)); }
+      .topbar { font-size: 9px; letter-spacing: .08em; }
+      .brand { font-size: 21px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .hero-inner { padding-top: 46px; }
+      .banner { min-height: 196px; }
+      .seal { width: 118px; height: 118px; }
+      .seal strong { font-size: 14px; }
+      .seal small { letter-spacing: .12em; }
+      .joy-chip { width: 86px; height: 86px; left: -8px; font-size: 12px; }
+      .joy-chip b { font-size: 18px; }
+      .feature-inner { justify-content: flex-start; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid img, .gallery-grid img:first-child { height: 210px; margin: 0; grid-column: auto; }
+      .cta-box h2 { font-size: 42px; }
+      .cta-actions { flex-direction: column; }
+      .footer-inner { justify-content: center; text-align: center; }
+    }
   </style>
 </head>
 <body>
   <div class="topbar">Handmade with heart · Little details, big memories</div>
+
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="Beads Ahoy home"><span class="mark">B</span> BEADS AHOY</a>
-      <button class="menu" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-      <nav aria-label="Main navigation"><a href="#what-we-do">What we do</a><a href="#our-story">Our story</a><a href="#our-work">Our work</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></nav>
-      <a class="button" href="#contact">Let's create ↗</a>
+      <a class="brand" href="#home" aria-label="Beads Ahoy home">
+        <span class="brand-mark">B</span>
+        <span>BEADS AHOY</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" style="display:none;">Menu</button>
+      <nav aria-label="Main navigation">
+        <a href="#what-we-do">What we do</a>
+        <a href="#our-story">Our story</a>
+        <a href="#our-work">Our work</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-button" href="#contact">Let's create ↗</a>
     </div>
   </header>
+
   <main id="home">
-    <section class="hero"><div class="wrap hero-inner">
-      <div class="hero-copy"><p class="eyebrow"><span class="dot"></span>Your happy little charm corner</p><h1>Make it yours.<span>Make it joyful.</span></h1>
-        <p>From colorful custom charms to keepsakes made just for you, Beads Ahoy turns tiny treasures into big smiles. Pick your colors, choose your charms, and create something that feels like you.</p>
-        <div class="actions"><a class="button" href="#what-we-do">Explore the fun →</a><a class="button gold" href="#contact">Chat with us</a></div>
-        <div class="micro">♡ Personalized pieces · On-site charm booth · Event-ready fun</div>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span>Your happy little charm corner</p>
+          <h1>Make it yours.<span class="alt">Make it joyful.</span></h1>
+          <p>From colorful custom charms to keepsakes made just for you, Beads Ahoy turns tiny treasures into big smiles. Pick your colors, choose your charms, and create something that feels like you.</p>
+          <div class="actions">
+            <a class="button-main" href="#what-we-do">Explore the fun →</a>
+            <a class="button-soft" href="#contact">Chat with us</a>
+          </div>
+          <div class="microcopy">♡ Personalized pieces · On-site charm booth · Event-ready fun</div>
+        </div>
+
+        <div class="art-stage" aria-label="Beads Ahoy and The Bean illustration">
+          <div class="banner">
+            <span class="big-b">B</span>
+            <div class="seal">
+              <div>
+                <b>b</b>
+                <strong>The Bean</strong>
+                <small>by Beads Ahoy</small>
+              </div>
+            </div>
+            <div class="bead-row" aria-hidden="true">
+              <span>B</span><span>E</span><span>A</span><span>D</span><span>S</span>
+            </div>
+          </div>
+          <div class="joy-chip">made with<br><b>♡ JOY</b></div>
+        </div>
       </div>
-      <div class="art" aria-label="Beads Ahoy and The Bean brand illustration"><div class="banner"><span class="big-b">B</span><div class="seal"><div><b>b</b><strong>The Bean</strong><small>by Beads Ahoy</small></div></div><div class="beads" aria-hidden="true"><i>B</i><i>E</i><i>A</i><i>D</i><i>S</i></div></div><div class="joy">made with<br><b>♡ JOY!</b></div></div>
-    </div></section>
-    <div class="perks"><div class="wrap perks-inner"><div class="perk"><span>✿</span>Made with heart</div><div class="perk"><span>♡</span>Personalized for you</div><div class="perk"><span>✦</span>Perfect for celebrations</div></div></div>
-    <section class="section" id="what-we-do"><div class="wrap">
-      <div class="heading"><p class="eyebrow">A little something for everyone</p><h2>What can we create together?</h2><p>Pick a favorite, mix in your personality, and leave with a little piece of happy.</p></div>
-      <div class="grid"><article class="create-card"><div class="icon">✿</div><h3>Custom charms</h3><p>Colorful letter beads and playful charms made into a one-of-a-kind accessory.</p></article><article class="create-card"><div class="icon">♡</div><h3>Personal keepsakes</h3><p>Thoughtful little treasures for your favorite people and everyday moments.</p></article><article class="create-card"><div class="icon">✦</div><h3>Pop-up charm booth</h3><p>A hands-on, joy-filled activity that brings a creative touch to your celebration.</p></article></div>
-    </div></section>
-    <section class="story" id="our-story"><div class="wrap story-grid">
-      <img class="story-photo" src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="A colorful creative workspace ready for handmade crafts" loading="lazy">
-      <div><p class="eyebrow">A small business with a big heart</p><h2>Little beads.<br>Lasting memories.</h2><p>Beads Ahoy is all about making ordinary moments a little more special. We love seeing you mix, match, and make something personal—whether it's a name charm, a colorful bracelet, or a keepsake for someone you love.</p><p>Our pop-up charm booth brings the fun right to your celebration, with a colorful selection and a hands-on experience guests can take home.</p><div class="pills"><span class="pill">♡ Creativity</span><span class="pill">✿ Personal touches</span><span class="pill">✦ Happy memories</span></div><a class="button" href="#contact">Plan a charm day ↗</a></div>
-    </div></section>
-    <section class="section gallery" id="our-work"><div class="wrap"><div class="heading"><p class="eyebrow">Made for the moments</p><h2>A peek at the happy things</h2><p>Colorful charm stations, personalized details, and little creations made with love.</p></div><div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="A warm handmade shop display" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="Colorful art and creative materials" loading="lazy">
-      <img src="https://images.unsplash.com/photo-1455390582262-044c shores?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="A creative work table" loading="lazy">
-    </div></div></section>
-    <section class="reviews" id="reviews"><div class="wrap reviews-grid">
-      <article class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“They are diligent answering my needs and inquiries, despite very limited time. The souvenirs were well presented based on my theme. Everything was smooth. My visitors really enjoyed it.”</blockquote><div class="reviewer">Jus Domingo</div><div class="review-meta">Facebook recommendation · June 26</div></article>
-      <article class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Superb! I highly recommend the DIY and unique event souvenirs. The team was accommodating and had a very beautiful attendant at the booth.”</blockquote><div class="reviewer">Rhealyn Anasarias Plotea</div><div class="review-meta">Facebook recommendation · June 10</div></article>
-      <article class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Legit and high quality customized keychains. They finished my order within a day. Thank you!”</blockquote><div class="reviewer">Abbie B Gregory</div><div class="review-meta">Facebook recommendation · May 18</div></article>
-    </div></section>
-    <section class="contact" id="contact"><div class="wrap">
-      <p class="eyebrow">Let's make something cute</p><h2>Ready to add a little charm?</h2>
-      <p class="contact-copy">Have an event coming up, a gift idea, or a custom design in mind? We'd love to hear about it. Send us a message and let's make your idea come to life.</p>
-      <div class="contact-actions"><a class="button gold" href="mailto:JBAWALI30@GMAIL.COM?subject=Message%20Beads%20Ahoy">Message Beads Ahoy ↗</a></div>
-      <div class="contact-details">Call or message: <a href="tel:+639760005974">0976 000 5974</a> · Pasig City, Philippines<div class="email-line">Email: <a href="mailto:JBAWALI30@GMAIL.COM">JBAWALI30@GMAIL.COM</a></div></div>
-      <div class="contact-actions social-buttons"><a class="button gold" href="https://www.facebook.com/awalijb" target="_blank" rel="noopener noreferrer">Follow our main Facebook ↗</a><a class="button gold" href="#our-work">See new products ↗</a></div>
-    </div></section>
+    </section>
+
+    <div class="feature-bar">
+      <div class="wrap feature-inner">
+        <div class="feature-item"><span>✦</span>Made with heart</div>
+        <div class="feature-item"><span>♡</span>Personalized for you</div>
+        <div class="feature-item"><span>✦</span>Perfect for celebrations</div>
+      </div>
+    </div>
+
+    <section class="section" id="what-we-do">
+      <div class="wrap">
+        <div class="section-header">
+          <p class="eyebrow"><span class="dot"></span>A little something for everyone</p>
+          <h2>What can we create together?</h2>
+          <p>Pick a favorite, mix in your personality, and leave with a little piece of happy.</p>
+        </div>
+
+        <div class="create-grid">
+          <article class="create-card">
+            <div class="icon">✿</div>
+            <h3>Custom charms</h3>
+            <p>Colorful letter beads and playful charms made into a one-of-a-kind accessory.</p>
+          </article>
+          <article class="create-card">
+            <div class="icon">♡</div>
+            <h3>Personal keepsakes</h3>
+            <p>Thoughtful little treasures for your favorite people and everyday moments.</p>
+          </article>
+          <article class="create-card">
+            <div class="icon">✦</div>
+            <h3>Pop-up charm booth</h3>
+            <p>A hands-on, joy-filled activity that brings a creative touch to your celebration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="our-story">
+      <div class="wrap story-grid">
+        <img class="story-photo" src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1100&q=85" alt="A hand-crafted colorful booth" loading="lazy">
+        <div class="story-copy">
+          <p class="eyebrow"><span class="dot"></span>A small business with a big heart</p>
+          <h2>Little beads.<br>Lasting memories.</h2>
+          <p>Beads Ahoy is all about making ordinary moments a little more special. We love seeing you mix, match, and make something personal—whether it's a name charm, a colorful bracelet, or a keepsake for someone you love.</p>
+          <p>Our pop-up charm booth brings the fun right to your celebration, with a colorful selection and a hands-on experience guests can take home.</p>
+          <div class="pills">
+            <span class="pill">♡ Creativity</span>
+            <span class="pill">✿ Personal touches</span>
+            <span class="pill">✦ Happy memories</span>
+          </div>
+          <a class="button-main" href="#contact">Plan a charm day ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="our-work">
+      <div class="wrap">
+        <div class="section-header">
+          <p class="eyebrow"><span class="dot"></span>Made for the moments</p>
+          <h2>A peek at the happy things</h2>
+          <p>Colorful charm stations, personalized details, and little creations made with love.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=85" alt="Warm handmade shop display" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=85" alt="Creative art materials" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1455390582262-044c?auto=format&fit=crop&w=800&q=85" alt="Creative work table" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="wrap reviews-grid">
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>“They are diligent and always ready to help. They give clear instructions and answer every question and need quickly.”</blockquote>
+          <div class="reviewer">Jus Domingo</div>
+          <div class="review-meta">Facebook recommendation · June 26</div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Superb! I highly recommend the DIY and unique event souvenirs. The team was accommodating and had a very beautiful attendant at the booth.”</blockquote>
+          <div class="reviewer">Rhealyn Anasarias Plotea</div>
+          <div class="review-meta">Facebook recommendation · June 10</div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Legit and high quality customized keychains. They finished my order within a day. Thank you!”</blockquote>
+          <div class="reviewer">Abbie B Gregory</div>
+          <div class="review-meta">Facebook recommendation · May 18</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="wrap cta-box">
+        <p class="eyebrow"><span class="dot"></span>Let's make something cute</p>
+        <h2>Ready to add a little charm?</h2>
+        <p>Have an event coming up, a gift idea, or a custom design in mind? We’d love to hear about it. Send us a message and let’s make your idea come to life.</p>
+
+        <div class="cta-actions">
+          <a class="button-main" href="mailto:JBAWALI30@GMAIL.COM?subject=Message%20Beads%20Ahoy">Message Beads Ahoy ↗</a>
+        </div>
+
+        <div class="contact-line">Call or message: <a href="tel:+639760005974">0976 000 5974</a> · Pasig City, Philippines</div>
+        <div class="contact-line">Email: <a href="mailto:JBAWALI30@GMAIL.COM">JBAWALI30@GMAIL.COM</a></div>
+
+        <div class="cta-actions">
+          <a class="button-soft" href="https://www.facebook.com/awalijb" target="_blank" rel="noopener noreferrer">Follow our main Facebook ↗</a>
+          <a class="button-soft" href="#our-work">See new products ↗</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="wrap footer-inner"><a href="#home" class="footer-brand"><span class="mark">B</span>Beads Ahoy</a><div class="copyright">© <span id="year"></span> Beads Ahoy. Handmade with heart. ♡</div><div class="footer-links"><a href="#home">Back to top ↑</a><a href="https://wa.me/639760005974" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="https://www.facebook.com/awalijb" target="_blank" rel="noopener noreferrer">Facebook</a><a href="#our-work">New products</a></div></div></footer>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark">B</span>
+        <span>Beads Ahoy</span>
+      </div>
+      <div class="copyright">© <span id="year"></span> Beads Ahoy. Handmade with heart. ♡</div>
+      <div class="footer-links">
+        <a href="#home">Back to top</a>
+        <a href="https://wa.me/639760005974" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.facebook.com/awalijb" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="#our-work">New products</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    const menuButton=document.querySelector('.menu');
-    const nav=document.querySelector('nav');
-    menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('show');menuButton.setAttribute('aria-expanded',String(open));});
-    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('show');menuButton.setAttribute('aria-expanded','false');}));
-    document.getElementById('year').textContent=new Date().getFullYear();
+    const nav = document.querySelector('nav');
+    const btn = document.querySelector('.menu-toggle');
+    if (btn && nav) {
+      btn.style.display = 'block';
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('show');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('show')));
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
